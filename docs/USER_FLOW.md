@@ -25,25 +25,4 @@ flowchart TD
     L -->|حفظ رغم ذلك| M
     
     J --> N[تغيير الحالة / تعديل / حذف]
-sequenceDiagram
-    autonumber
-    actor User as المستخدم
-    participant App as تطبيق Flutter (مُتَابِع)
-    participant Auth as Firebase Auth
-    participant API as MockAPI REST Service
 
-    User->>App: فتح التطبيق
-    App->>Auth: التحقق من الجلسة (Check Current User)
-    Auth-->>App: إرجاع الـ userId (UID)
-    
-    alt إضافة تقديم جديد
-        User->>App: إدخال بيانات التقديم
-        App->>App: فحص التكرار محلياً (Duplicate Check)
-        App->>API: إرسال طلب POST مع الـ userId
-        API-->>App: استجابة 201 Created
-        App-->>User: إظهار رسالة "تم الحفظ بنجاح"
-    else جلب التقديمات
-        App->>API: إرسال طلب GET المفلتر بالـ userId
-        API-->>App: إرجاع قائمة التقديمات (JSON)
-        App-->>User: عرض التقديمات في الكروت
-    end

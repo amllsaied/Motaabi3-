@@ -1,41 +1,68 @@
-```markdown
-# 📱 تطبيق مُتَابِع (Mutaabi3) - Personal Job Application Tracker
+# تطبيق مُتَابِع (Mutaabi3) - Personal Job Application Tracker
 
-<p align="right">
-  <b>تطبيق موبايل إنتاجي متكامل باللغة العربية لمتابعة وتنظيم تقديمات الوظائف والتدريبات.</b><br>
-  <i>"متنساش قدمت فين"</i>
+<p align="center">
+  <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" />
+  <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white" />
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
+  <img src="https://img.shields.io/badge/REST_API-MockAPI-blue?style=for-the-badge" />
 </p>
 
 ---
 
-## 🌟 المميزات الرئيسية (Key Features)
-- 🔐 **مصادقة آمنة:** إنشاء حساب وتسجيل دخول موثوق باستخدام Firebase Authentication.
-- 📝 **إدارة التقديمات (CRUD):** إضافة، عرض، تعديل، وحذف التقديمات وربطها أونلاين بـ REST API.
-- 🔍 **تصفية وبحث ذكي:** بحث سريع باسم الشركة أو الوظيفة مع فلترة حسب حالة التقديم (`تم التقديم` | `مقابلة` | `عرض` | `مرفوض`).
-- ⚠️ **كشف التكرار (Duplicate Alert):** تنبيه ذكي عند محاولة تقديم نفس الوظيفة لشركة مسجلة مسبقاً.
-- 🎨 **واجهة عربية أصيلة (100% RTL):** تصميم عصري باستخدام خط `Cairo` وباليتة ألوان قياسية احترافية.
+## عن التطبيق (Overview)
+
+تطبيق **"مُتَابِع"** هو أداة إنتاجية شخصية موجهة بالكامل باللغة العربية (RTL) لمساعدة المطورين والباحثين عن عمل في تتبع كافة تقديمات الوظائف والتدريبات في مكان واحد بدون تشتت.
+
+> **الشعار الأساسي:** *"متنساش قدمت فين."*
 
 ---
 
-## 🛠️ التقنيات المستخدمة (Tech Stack)
-* **Framework:** Flutter
-* **Architecture:** Clean / Layered Architecture
-* **State Management:** BLoC / Cubit
-* **Network & API:** Dio Client & MockAPI.io
+## المميزات الرئيسية (Key Features)
+
+* **مصادقة موثوقة:** تسجيل الدخول وإنشاء الحساب بواسطة **Firebase Authentication**.
+* **إدارة التقديمات (CRUD):** إضافة، عرض، تعديل، وحذف التقديمات عبر **REST API** أونلاين.
+* **بحث وتصفية ذكية:** فلترة سريعة حسب حالة التقديم (`تم التقديم` | `قيد المراجعة` | `مقابلة` | `عرض` | `مرفوض` | `منسحب`).
+* **كشف التكرار (Duplicate Alert):** تنبيه ذكي لتجنب إعادة التقديم لشركة مسجلة مسبقاً.
+* **واجهة عربية أصيلة (100% RTL):** تصميم قياسي باستخدام خط `Cairo` وباليتة ألوان هادئة واحترافية.
+
+---
+
+## البناء البرمجي (Tech Stack)
+
+* **Framework:** Flutter (Dart)
+* **Architecture:** Layered / Clean Architecture Blueprint
+* **State Management:** Flutter BLoC / Cubit
+* **Networking & REST API:** Dio Client & MockAPI.io
 * **Authentication:** Firebase Auth
+* **Typography:** Google Fonts (Cairo)
 
 ---
 
-## 📚 التوثيق الهندسي الشامل (Documentation)
-يمكنك الاطلاع على وثائق المشروع التفصيلية داخل مجلد `docs/`:
-* 📄 [Business Requirements Document (BRD)](docs/BRD.md)
-* 📋 [Product Requirements Document (PRD)](docs/PRD.md)
-* 🔄 [User Flow & Diagrams](docs/USER_FLOW.md)
-* 🏗️ [Technical Architecture Specification](docs/ARCHITECTURE.md)
+## التوثيق الهندسي المكتمل (Documentation)
+
+يمكنك الاطلاع على تفاصيل التحليل الفني والوظيفي من خلال الوثائق الموجودة في مجلد `docs/`:
+
+| الوثيقة | الوصف |
+| :--- | :--- |
+| **[Business Requirements (BRD)](docs/BRD.md)** | أهداف المشروع التجارية، المشكلة، والـ KPIs. |
+| **[Product Requirements (PRD)](docs/PRD.md)** | المواصفات الوظيفية والتصميمية الكاملة. |
+| **[User Flow Diagrams](docs/USER_FLOW.md)** | مخططات التنقل بين الشاشات ورحلة المستخدم. |
+| **[Technical Architecture](docs/ARCHITECTURE.md)** | هيكلية الكود ودورة حركة البيانات (Sequence Diagram). |
 
 ---
 
-## 🚀 كيفية التشغيل (Run Locally)
-1. قم بعمل Clone للمشروع:
-   ```bash
-   git clone [https://github.com/amllsaied/mutaabi3.git](https://github.com/amllsaied/mutaabi3.git)
+## هيكلية المشروع (Project Architecture)
+
+```text
+lib/
+├── core/                   # Theme, Palette, Network Client & Utilities
+│   ├── theme/
+│   └── network/
+│
+├── features/               # Modular Features
+│   ├── auth/               # Firebase Auth Flow (Login & Register)
+│   └── applications/       # Job Applications Flow (CRUD & Cubit)
+│       ├── data/           # Models, ApiService (MockAPI), Repositories
+│       └── presentation/   # Cubit, Screens, Widgets
+│
+└── main.dart               # Entry Point

@@ -1,17 +1,41 @@
-# motaabe
+```markdown
+# 📱 تطبيق مُتَابِع (Mutaabi3) - Personal Job Application Tracker
 
-A new Flutter project.
+<p align="right">
+  <b>تطبيق موبايل إنتاجي متكامل باللغة العربية لمتابعة وتنظيم تقديمات الوظائف والتدريبات.</b><br>
+  <i>"متنساش قدمت فين"</i>
+</p>
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🌟 المميزات الرئيسية (Key Features)
+- 🔐 **مصادقة آمنة:** إنشاء حساب وتسجيل دخول موثوق باستخدام Firebase Authentication.
+- 📝 **إدارة التقديمات (CRUD):** إضافة، عرض، تعديل، وحذف التقديمات وربطها أونلاين بـ REST API.
+- 🔍 **تصفية وبحث ذكي:** بحث سريع باسم الشركة أو الوظيفة مع فلترة حسب حالة التقديم (`تم التقديم` | `مقابلة` | `عرض` | `مرفوض`).
+- ⚠️ **كشف التكرار (Duplicate Alert):** تنبيه ذكي عند محاولة تقديم نفس الوظيفة لشركة مسجلة مسبقاً.
+- 🎨 **واجهة عربية أصيلة (100% RTL):** تصميم عصري باستخدام خط `Cairo` وباليتة ألوان قياسية احترافية.
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## 🛠️ التقنيات المستخدمة (Tech Stack)
+* **Framework:** Flutter
+* **Architecture:** Clean / Layered Architecture
+* **State Management:** BLoC / Cubit
+* **Network & API:** Dio Client & MockAPI.io
+* **Authentication:** Firebase Auth
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 📚 التوثيق الهندسي الشامل (Documentation)
+يمكنك الاطلاع على وثائق المشروع التفصيلية داخل مجلد `docs/`:
+* 📄 [Business Requirements Document (BRD)](docs/BRD.md)
+* 📋 [Product Requirements Document (PRD)](docs/PRD.md)
+* 🔄 [User Flow & Diagrams](docs/USER_FLOW.md)
+* 🏗️ [Technical Architecture Specification](docs/ARCHITECTURE.md)
+
+---
+
+## 🚀 كيفية التشغيل (Run Locally)
+1. قم بعمل Clone للمشروع:
+   ```bash
+   git clone [https://github.com/amllsaied/mutaabi3.git](https://github.com/amllsaied/mutaabi3.git)
